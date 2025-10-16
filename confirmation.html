@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation - Netfiz.space</title>
+  <style>
+    body {
+      background: #0b1220;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .container {
+      background: #121c30;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 300px;
+    }
+    h1 {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 0.9em;
+      color: #cce4ff;
+      margin-bottom: 25px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00b4d8, #0077b6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #0096c7, #005f99);
+    }
+    .success {
+      display: none;
+      margin-top: 20px;
+      color: #9be2ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Vérification de l’adresse e-mail</h1>
+    <p id="emailText">Un code a été envoyé à votre adresse e-mail.</p>
+    <input type="text" id="code" placeholder="Entrez le code reçu">
+    <button onclick="verifierCode()">Valider</button>
+    <p class="success" id="success">✅ Adresse confirmée avec succès !</p>
+  </div>
+
+  <script>
+    // Récupère l’e-mail depuis l’URL (transmis depuis la première page)
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+    if (email) {
+      document.getElementById("emailText").innerText =
+        `Un code a été envoyé à ${email}`;
+    }
+
+    function verifierCode() {
+      const code = document.getElementById("code").value.trim();
+      const msg = document.getElementById("success");
+
+      if (!code) {
+        alert("Veuillez entrer le code de confirmation.");
+        return;
+      }
+
+      // Simule la validation du code (tu pourras plus tard relier ça à ton back-end)
+      msg.style.display = "block";
+
+      // Exemple : redirection vers la page principale après succès
+      // window.location.href = "accueil.html";
+    }
+  </script>
+
+</body>
+</html>
