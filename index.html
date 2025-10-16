@@ -1,178 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Netfiz.space — Streaming privé</title>
-  <meta name="description" content="Netfiz.space — Plateforme privée de streaming. Inscription, paiement et gestion d'abonnements." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accès - Netfiz.space</title>
   <style>
-    /* Minimal modern styling - single file for rapid deploy */
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4;--glass:rgba(255,255,255,0.04)}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#e6eef6;background:linear-gradient(180deg,#031025 0%,#071427 100%);-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo .badge{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04263a}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-bottom:28px}
-    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    h1{margin:0 0 12px;font-size:28px}
-    p.lead{color:var(--muted);margin-top:0}
-    .cta{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#3b82f6);color:#04263a;font-weight:700;text-decoration:none;margin-top:12px}
-    .features{display:flex;gap:12px;margin-top:18px}
-
-    /* Pricing grid */
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
-    .plan{padding:18px;border-radius:10px;background:linear-gradient(180deg,var(--glass),transparent);border:1px solid rgba(255,255,255,0.03)}
-    .plan h3{margin:0 0 8px}
-    .price{font-size:22px;font-weight:700}
-    ul{padding-left:18px;color:var(--muted)}
-
-    footer{color:var(--muted);padding:18px 0;text-align:center;margin-top:28px}
-
-    /* Responsive */
-    @media(max-width:880px){.hero{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.logo .text{display:none}}
+    body {
+      background: #0b1220;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .container {
+      background: #121c30;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 300px;
+    }
+    h1 {
+      font-size: 1.3em;
+      margin-bottom: 25px;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00b4d8, #0077b6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #0096c7, #005f99);
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #9be2ff;
+      display: none;
+    }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <header>
-      <div class="logo">
-        <div class="badge">N</div>
-        <div class="text">
-          <div style="font-weight:700;color:#fff">netfiz.space</div>
-          <div style="font-size:12px;color:var(--muted)">Streaming privé • Essai 24h</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#features">Fonctionnalités</a>
-        <a href="#pricing">Forfaits</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div>
-        <div class="card">
-          <h1>Plateforme de streaming privée pour vos clients</h1>
-          <p class="lead">Inscription automatisée, pages de paiement compatible Stripe, gestion simple des essais et des abonnements. Conçue pour héberger votre panel IPTV et vendre des accès.</p>
-          <a class="cta" href="#pricing">Voir les forfaits</a>
-
-          <div class="features">
-            <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">Essai 24h</div>
-            <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">Paiement Stripe</div>
-            <div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:8px">Support FR/EN</div>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="card">
-          <strong>Démo rapide</strong>
-          <p style="color:var(--muted)">Formulaire d'inscription et bouton de paiement. Remplacez les endpoints par vos URLs (panel Scorpion / Xtream / autre).</p>
-          <form onsubmit="event.preventDefault();alert('Remplacez l\'action du formulaire par votre endpoint de création d\'essai.');" style="display:flex;flex-direction:column;gap:10px">
-            <input required placeholder="Nom d'utilisateur" name="user" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff" />
-            <input required placeholder="Adresse e‑mail" type="email" name="email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff" />
-            <button class="cta" type="submit">Démarrer l'essai 24h</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <div class="card">
-        <h2>Fonctionnalités clés</h2>
-        <ul>
-          <li>Gestion automatique des essais (24h) & renouvellements</li>
-          <li>Intégration facile Stripe / Webhooks pour activation automatique</li>
-          <li>Pages responsive pour mobile et TV</li>
-          <li>Tableau d'administration simple (export CSV, recherche par MAC/email)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="pricing" style="margin-top:12px">
-      <h2 style="color:#fff">Forfaits</h2>
-      <div class="pricing">
-        <div class="plan card">
-          <h3>Essai</h3>
-          <div class="price">24h • Gratuit</div>
-          <p style="color:var(--muted)">Accès temporaire pour tester le service.</p>
-          <ul>
-            <li>24h d'accès</li>
-            <li>Accès complet au catalogue</li>
-          </ul>
-          <a class="cta" href="#contact">Créer un essai</a>
-        </div>
-
-        <div class="plan card">
-          <h3>Mensuel</h3>
-          <div class="price">9.99 $ / mois</div>
-          <p style="color:var(--muted)">Pour clients réguliers</p>
-          <ul>
-            <li>Streaming illimité</li>
-            <li>Accès multi‑appareils</li>
-          </ul>
-          <a class="cta" href="#contact">S'abonner</a>
-        </div>
-
-        <div class="plan card">
-          <h3>Annuel</h3>
-          <div class="price">79.99 $ / an</div>
-          <p style="color:var(--muted)">Économisez 33%</p>
-          <ul>
-            <li>Facturation annuelle</li>
-            <li>Support prioritaire</li>
-          </ul>
-          <a class="cta" href="#contact">S'abonner</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="card">
-        <h2>FAQ — Questions fréquentes</h2>
-        <details>
-          <summary>Comment fonctionne l'essai 24h ?</summary>
-          <p style="color:var(--muted)">L'utilisateur s'inscrit et reçoit un compte temporaire. Après 24h, le compte est désactivé automatiquement si aucun paiement n'est fait.</p>
-        </details>
-        <details>
-          <summary>Quels modes de paiement ?</summary>
-          <p style="color:var(--muted)">Intégration Stripe ou page de paiement externe selon votre configuration.</p>
-        </details>
-        <details>
-          <summary>Puis-je connecter mon panel Scorpion / Xtream ?</summary>
-          <p style="color:var(--muted)">Oui — remplacez le formulaire et les webhooks par les endpoints API de votre panel.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="contact" style="margin-top:18px">
-      <div class="card">
-        <h2>Contact</h2>
-        <p style="color:var(--muted)">Pour déployer, connexion au panel et personnalisation, écrivez à : <a href="mailto:hello@netfiz.space">hello@netfiz.space</a>.</p>
-        <p style="color:var(--muted)">Ou utilisez ce formulaire de contact :</p>
-        <form onsubmit="event.preventDefault();alert('Message envoyé (demo) — remplacez la logique par votre backend ou Zapier).');" style="display:flex;flex-direction:column;gap:10px">
-          <input placeholder="Votre nom" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff" />
-          <input placeholder="Votre e‑mail" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff" />
-          <textarea placeholder="Message" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;min-height:100px"></textarea>
-          <button class="cta" type="submit">Envoyer</button>
-        </form>
-      </div>
-    </section>
-
-    <footer>
-      © " + new Date().getFullYear() + " netfiz.space — Prototype rapide. Remplacez le contenu et les endpoints avant mise en production.
-    </footer>
+    <h1>Accès à Netfiz.space</h1>
+    <input type="email" id="email" placeholder="Entrez votre adresse e-mail" required>
+    <button onclick="envoyerEmail()">Confirmer</button>
+    <p class="message" id="message">Un code de confirmation vous a été envoyé.</p>
   </div>
 
   <script>
-    // Petit helper pour rendre l'année dynamique si le fichier est ouvert côté client
-    try{
-      document.querySelector('footer').innerHTML = '© ' + new Date().getFullYear() + ' netfiz.space — Prototype rapide. Remplacez le contenu et les endpoints avant mise en production.'
-    }catch(e){/* ignore */}
+    function envoyerEmail() {
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message');
+
+      if (!email || !email.includes('@')) {
+        alert("Veuillez entrer une adresse e-mail valide.");
+        return;
+      }
+
+      // Simule l'envoi du code (tu pourras remplacer ça plus tard par un vrai appel backend)
+     window.location.href = "confirmation.html?email=" + encodeURIComponent(email);
+
+      // Ici tu pourrais rediriger vers la page de code de confirmation :
+      // window.location.href = "confirmation.html?email=" + encodeURIComponent(email);
+    }
   </script>
+
 </body>
 </html>
